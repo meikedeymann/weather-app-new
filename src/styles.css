@@ -32,8 +32,13 @@ p{
     margin-bottom:0;
 }
 
+.temperature-narrative {
+   text-transform: capitalize;
+}
+
 footer {
     padding-top: 40px;
     font-size: 12px;
     font-style: italic;
 }
+
