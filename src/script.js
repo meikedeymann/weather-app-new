@@ -22,6 +22,8 @@ function changeWeather (response) {
     currentTemperature.innerHTML = Math.round(response.data.temperature.current);
     currentHumidity.innerHTML = Math.round(response.data.temperature.humidity);
     currentWind.innerHTML = Math.round(response.data.wind.speed);
+    iconElement.setAttribute ("src", response.data.condition.icon_url);
+    iconElement.setAttribute ("alt", response.data.condition.icon);
 }
 
 // Variables
@@ -40,6 +42,7 @@ let dow = days[now.getDay()];
 let hour = now.getHours();
 let minutes = now.getMinutes();
 let searchForm = document.querySelector(".search-form");
+let iconElement = document.querySelector("#icon");
 
 updateTime();
 searchForm.addEventListener("submit", changeCity);
