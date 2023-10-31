@@ -32,6 +32,8 @@ p{
     margin-bottom:0;
 }
 
-button.hover {
-    background-color: white;
+footer {
+    padding-top: 40px;
+    font-size: 12px;
+    font-style: italic;
 }
