@@ -1,0 +1,27 @@
+.weather-app-skeleton {
+    position: absolute;
+   font-family: 'Lato', sans-serif;;
+    color: #2C234D;
+    border: solid;
+    border-color: black;
+    margin: 10px;
+    padding: 10px 0px;
+    border-radius: 25px;
+    background: radial-gradient(328px at 2.9% 15%, rgb(191, 224, 251) 0%, rgb(232, 233, 251) 25.8%, rgb(252, 239, 250) 50.8%, rgb(234, 251, 251) 77.6%, rgb(240, 251, 244) 100.7%);
+}
+
+h1, h2, h3 {
+    padding-left: 0;
+}
+
+h2 {
+    font-size: 20px;
+}
+
+h3 {
+    font-size: 18px;
+}
+
+p{
+    margin-bottom:0;
+}
