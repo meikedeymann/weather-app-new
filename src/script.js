@@ -20,10 +20,27 @@ function changeWeather (response) {
     currentCity.innerHTML = `${currentCityInput.value}`;
     currentWeatherNarrative.innerHTML = (response.data.condition.description);
     currentTemperature.innerHTML = Math.round(response.data.temperature.current);
+    celsiusTemperature = response.data.temperature.current;
     currentHumidity.innerHTML = Math.round(response.data.temperature.humidity);
     currentWind.innerHTML = Math.round(response.data.wind.speed);
     iconElement.setAttribute ("src", response.data.condition.icon_url);
     iconElement.setAttribute ("alt", response.data.condition.icon);
+}
+
+function convertToFahrenheit (event){
+    event.preventDefault();
+    celsiusConversion.classList.remove("celsius-conversion");
+    fahrenheitConversion.classList.add("celsius-conversion");
+    fahrenheitTemperature = Math.round((celsiusTemperature*9)/5+32);
+    currentTemperature.innerHTML = `${fahrenheitTemperature}`;
+}
+
+function convertToCelsius (event){
+    event.preventDefault();
+    celsiusConversion.classList.add("celsius-conversion");
+    fahrenheitConversion.classList.remove("celsius-conversion");
+    celsiusTemperature = Math.round(celsiusTemperature);
+    currentTemperature.innerHTML = celsiusTemperature;
 }
 
 // Variables
@@ -43,6 +60,12 @@ let hour = now.getHours();
 let minutes = now.getMinutes();
 let searchForm = document.querySelector(".search-form");
 let iconElement = document.querySelector("#icon");
+let celsiusTemperature =null;
+let fahrenheitConversion = document.querySelector(".fahrenheit-conversion");
+let celsiusConversion = document.querySelector(".celsius-conversion");
 
+// Befehle
 updateTime();
 searchForm.addEventListener("submit", changeCity);
+fahrenheitConversion.addEventListener("click", convertToFahrenheit);
+celsiusConversion.addEventListener("click", convertToCelsius);
