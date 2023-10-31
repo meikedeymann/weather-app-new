@@ -1,11 +1,11 @@
 // Functions
 function updateTime (){
-    dateElement.innerHTML =`${dow} ${hour}:${minutes}`; 
-    if (hour<10) {
+    if (hour < 10) {
         hour = `0${hours}`;
     }
-    if (minutes<10){
+    if (minutes < 10){
         minutes =`0${minutes}`;
+        dateElement.innerHTML =`${dow} ${hour}:${minutes}`; 
     }
 }
 

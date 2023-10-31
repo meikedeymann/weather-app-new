@@ -10,6 +10,12 @@
     background: radial-gradient(328px at 2.9% 15%, rgb(191, 224, 251) 0%, rgb(232, 233, 251) 25.8%, rgb(252, 239, 250) 50.8%, rgb(234, 251, 251) 77.6%, rgb(240, 251, 244) 100.7%);
 }
 
+form {
+    position: relative;
+    padding-left: 10px;
+    padding-bottom: 20px;
+}
+
 h1, h2, h3 {
     padding-left: 0;
 }
@@ -24,4 +30,8 @@ h3 {
 
 p{
     margin-bottom:0;
+}
+
+button.hover {
+    background-color: white;
 }
