@@ -47,3 +47,8 @@ footer {
     text-decoration: none;
 }
 
+.weather-forecast-section {
+    display: flexbox;
+    justify-content: center;
+}
+

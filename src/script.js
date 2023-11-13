@@ -25,6 +25,8 @@ function changeWeather (response) {
     currentWind.innerHTML = Math.round(response.data.wind.speed);
     iconElement.setAttribute ("src", response.data.condition.icon_url);
     iconElement.setAttribute ("alt", response.data.condition.icon);
+
+    displayForecast();
 }
 
 function convertToFahrenheit (event){
@@ -43,6 +45,19 @@ function convertToCelsius (event){
     currentTemperature.innerHTML = celsiusTemperature;
 }
 
+function displayForecast (){
+    forecastHTML ="";
+    days.forEach(function(day){
+    forecastHTML = forecastHTML + `
+            <div class="weather-forecast-section col-5" id="forecast">
+            <div class="weather-forecast-day"> ${day} </div>
+            <div class="weather-forecast-icon"> Icon </div>
+            <div> <span class="weather-forecast-temp-max"> 15 </span> <span class="weather-forecast-temp-min"> 5 </span> </div>
+            </div>
+    `})
+    forecast.innerHTML = forecastHTML;
+}
+
 // Variables
 let apiKey = "0e0ff2d19bf5c014ad22b48bt938314o";
 let units = "metric";
@@ -54,7 +69,7 @@ let currentWind = document.querySelector (".current-wind");
 let currentWeatherNarrative = document.querySelector(".temperature-narrative");
 let dateElement = document.querySelector (".date-element");
 let now = new Date ();
-let days = ["Sunday", "Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday"];
+let days = ["Sun", "Mon", "Tue", "Wed", "Thu", "Fri", "Sat"];
 let dow = days[now.getDay()];
 let hour = now.getHours();
 let minutes = now.getMinutes();
@@ -63,6 +78,7 @@ let iconElement = document.querySelector("#icon");
 let celsiusTemperature =null;
 let fahrenheitConversion = document.querySelector(".fahrenheit-conversion");
 let celsiusConversion = document.querySelector(".celsius-conversion");
+let forecast = document.querySelector("#forecast");
 
 // Befehle
 updateTime();
