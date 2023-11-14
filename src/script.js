@@ -16,17 +16,16 @@ function updateTime (){
     dateElement.innerHTML =`${dow} ${hour}:${minutes}`;
 }
 
-function changeWeather (response) {
+function changeWeather (city) {
     currentCity.innerHTML = `${currentCityInput.value}`;
-    currentWeatherNarrative.innerHTML = (response.data.condition.description);
-    currentTemperature.innerHTML = Math.round(response.data.temperature.current);
-    celsiusTemperature = response.data.temperature.current;
-    currentHumidity.innerHTML = Math.round(response.data.temperature.humidity);
-    currentWind.innerHTML = Math.round(response.data.wind.speed);
-    iconElement.setAttribute ("src", response.data.condition.icon_url);
-    iconElement.setAttribute ("alt", response.data.condition.icon);
-
-    displayForecast();
+    currentWeatherNarrative.innerHTML = (city.data.condition.description);
+    currentTemperature.innerHTML = Math.round(city.data.temperature.current);
+    celsiusTemperature = city.data.temperature.current;
+    currentHumidity.innerHTML = Math.round(city.data.temperature.humidity);
+    currentWind.innerHTML = Math.round(city.data.wind.speed);
+    iconElement.setAttribute ("src", city.data.condition.icon_url);
+    iconElement.setAttribute ("alt", city.data.condition.icon);
+    getForecast();
 }
 
 function convertToFahrenheit (event){
@@ -45,7 +44,14 @@ function convertToCelsius (event){
     currentTemperature.innerHTML = celsiusTemperature;
 }
 
-function displayForecast (){
+
+function getForecast (city) {
+    let apiUrl = `https://api.shecodes.io/weather/v1/current?query=${currentCityInput.value}&key=${apiKey}&units=${units}`;
+    axios(apiUrl).then(displayForecast);
+}
+
+function displayForecast (city){
+    console.log(city.data);
     let forecastHtml = "";
     days.forEach(function (day) {
       forecastHtml =
