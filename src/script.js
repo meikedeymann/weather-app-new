@@ -46,7 +46,7 @@ function convertToCelsius (event){
 
 
 function getForecast (city) {
-    let apiUrl = `https://api.shecodes.io/weather/v1/current?query=${currentCityInput.value}&key=${apiKey}&units=${units}`;
+    let apiUrl = `https://api.shecodes.io/weather/v1/forecast?query=${currentCityInput.value}&key=${apiKey}&units=${units}`;
     axios(apiUrl).then(displayForecast);
 }
 
