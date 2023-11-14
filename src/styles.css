@@ -49,9 +49,16 @@ footer {
 
 .weather-forecast-section {
     display: flex;
-    justify-content: space-around;
+    justify-content: space-evenly;
+    text-align: center;
+    padding-top: 30px;
     margin: 10px;
-    padding: 5px;
     border-top: solid;
+}
+
+.weather-forecast-temperatures {
+    display: flex;
+    justify-content: center;
+    text-align: center;
 }
 
