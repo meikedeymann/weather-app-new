@@ -1,6 +1,6 @@
 .weather-app-skeleton {
     position: absolute;
-   font-family: 'Lato', sans-serif;;
+    font-family: 'Lato', sans-serif;;
     color: #2C234D;
     border: solid;
     border-color: black;
@@ -48,7 +48,10 @@ footer {
 }
 
 .weather-forecast-section {
-    display: flexbox;
-    justify-content: center;
+    display: flex;
+    justify-content: space-around;
+    margin: 10px;
+    padding: 5px;
+    border-top: solid;
 }
 

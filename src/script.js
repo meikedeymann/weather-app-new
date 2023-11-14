@@ -46,17 +46,26 @@ function convertToCelsius (event){
 }
 
 function displayForecast (){
-    forecastHTML ="";
-    days.forEach(function(day){
-    forecastHTML = forecastHTML + `
-            <div class="weather-forecast-section col-5" id="forecast">
-            <div class="weather-forecast-day"> ${day} </div>
-            <div class="weather-forecast-icon"> Icon </div>
-            <div> <span class="weather-forecast-temp-max"> 15 </span> <span class="weather-forecast-temp-min"> 5 </span> </div>
+    let forecastHtml = "";
+    days.forEach(function (day) {
+      forecastHtml =
+        forecastHtml +
+        `
+        <div class="weather-forecast-day">
+          <div class="weather-forecast-date">${day}</div>
+          <div class="weather-forecast-icon">🌤️</div>
+          <div class="weather-forecast-temperatures">
+            <div class="weather-forecast-temperature">
+              <strong>15º</strong>
             </div>
-    `})
-    forecast.innerHTML = forecastHTML;
-}
+            <div class="weather-forecast-temperature">9º</div>
+          </div>
+        </div>
+      `;
+    });
+    let forecast = document.querySelector("#forecast");
+    forecast.innerHTML = forecastHtml;
+  }
 
 // Variables
 let apiKey = "0e0ff2d19bf5c014ad22b48bt938314o";
@@ -78,7 +87,7 @@ let iconElement = document.querySelector("#icon");
 let celsiusTemperature =null;
 let fahrenheitConversion = document.querySelector(".fahrenheit-conversion");
 let celsiusConversion = document.querySelector(".celsius-conversion");
-let forecast = document.querySelector("#forecast");
+
 
 // Befehle
 updateTime();

@@ -15,7 +15,7 @@
 <body>
 <div class="weather-app-skeleton">
 
-    <form class="row g-3 search-form">
+     <form class="row g-3 search-form">
         <div class="col-sm-6">
           <input type="text"- placeholder= "Type your city"  class="form-control" id="cityInput">
         </div>
@@ -23,8 +23,8 @@
       </form>
 
 
-    <div class="container text-left">
-    <div class="row">
+
+  <div class="row">
     <h1>Weather in <span class="current-city">Munich</span></h1>
     <h2>Last updated on <span class="date-element">Tuesday 10:00</span></h2>
     <h2 class="temperature-narrative">it is cloudy</h2>
@@ -35,11 +35,10 @@
         <p>Humidity: <span class="current-humidity">94</span>%</p>
         <p>Wind: <span class="current-wind">11 </span>m/sec</p>
         </div>
-        
-    </div>
-  
+        <div class="weather-forecast-section" id="forecast"></div>
   </div>
-  <div class="weather-forecast-section col-5" id="forecast"></div>
+
+
 <footer> <a href="https://github.com/meikedeymann/weather-app-new" class="code-link" target="_blank">Open-source code</a> by Meike Deymann</footer>
 
 <script src="src/script.js"></script>
